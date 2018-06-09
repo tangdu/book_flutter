@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:transparent_image/transparent_image.dart';
-import 'package:hello/views/zhuanlan_detail.dart';
 import 'package:hello/views/zhuanlan_column.dart';
 import 'package:hello/views/html_view.dart';
 import 'package:hello/model/zhuanLanPostEntity.dart';
@@ -179,7 +178,8 @@ class ZhuanLanTopicViewState extends State<ZhuanLanTopicView> {
       ],
     );
     return new RefreshIndicator(
-      color: Theme.of(context).buttonColor,
+      // color: Theme.of(context).buttonColor,
+      color:Colors.orange,
       child: grid,
       onRefresh: () => refreshData(),
     );

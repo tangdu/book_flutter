@@ -65,7 +65,7 @@ class ZhuanLanPostColumnView extends StatelessWidget {
     }
 
     return new Scaffold(
-        appBar: new AppBar(title: new Text(name), backgroundColor: Colors.blue),
+        appBar: new AppBar(title: new Text(name)),
         body: new Center(
           child: new FutureBuilder<List<ZhuanLanColumnEntity>>(
             future: fetchColumnData(),

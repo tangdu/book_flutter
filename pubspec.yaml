@@ -8,13 +8,11 @@ dependencies:
   # Use with the CupertinoIcons class for iOS style icons.
   cupertino_icons: ^0.1.0
   transparent_image: ^0.1.0
-  # flutter_html_view: "^0.4.0"
-  # video_player: "0.5.1"
-  flutter_webview_plugin: "0.1.5"
-  # zoomable_image: '>=1.1.0 <1.2.0'
+  flutter_webview_plugin: "^0.1.6"
   map_view: "^0.0.12"
   google_maps_webservice: "^0.0.3"
-  flutter_html_textview: "^0.2.6"
+  flutter_html_view: ^0.5.1
+  carousel_pro: ^0.0.1
 
 dev_dependencies:
   flutter_test:
@@ -32,8 +30,8 @@ flutter:
   uses-material-design: true
 
   # To add assets to your application, add an assets section, like this:
-  # assets:
-  #  - images/a_dot_burr.jpeg
+  assets:
+    - images/user_bk.jpg
   #  - images/a_dot_ham.jpeg
 
   # An image asset can refer to one or more resolution-specific "variants", see

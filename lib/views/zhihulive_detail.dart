@@ -139,12 +139,6 @@ class ZhihuliveDetailState extends State<ZhihuliveDetail> {
   @override
   Widget build(BuildContext context) {
     return new Scaffold(
-      // appBar: new AppBar(
-      //   title: new Text(
-      //     "$title",
-      //     style: new TextStyle(fontSize: 17.0, color: Colors.white),
-      //   ),
-      // ),
       body: new Container(
           margin: new EdgeInsets.only(top: 16.0),
           child: new Center(

@@ -1,10 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:hello/views/zhihulive_detail.dart';
 import 'package:hello/model/zhuanLiveEntity.dart';
-import 'package:hello/component/image_carousel.dart';
 import 'dart:async';
 import 'package:http/http.dart' as http;
 import 'dart:convert';
+import 'package:carousel_pro/carousel_pro.dart';
+import 'package:hello/component/static_ratingbar.dart';
 
 class ZhihulivePage extends StatefulWidget {
   @override
@@ -22,14 +23,25 @@ Future<List<ZhuanLiveEntity>> loadZhihuLive() async {
 class ZhihuliveState extends State<ZhihulivePage> {
   List<ZhuanLiveEntity> data;
 
-  var imageBox = new ImageCarousel([
-    new NetworkImage(
-        'https://pic4.zhimg.com/v2-9d6561747e5f80e69ac1be7854d95f34_r.jpg'),
-    new NetworkImage(
-        'https://pic4.zhimg.com/v2-9134f0d73044b418613cad9e6f506923_r.jpg'),
-    new NetworkImage(
-        'https://pic1.zhimg.com/v2-0592b61978e2636f38fd0f6ca5457484_r.jpg')
-  ], interval: new Duration(seconds: 3), height: 156.0);
+  var imageBox = new SizedBox(
+      height: 156.0,
+      width: 300.0,
+      child: new Carousel(
+        dotSize: 4.0,
+        dotSpacing: 15.0,
+        dotColor: Colors.grey,
+        indicatorBgPadding: 5.0,
+        dotBgColor: Colors.white.withOpacity(0.5),
+        borderRadius: false,
+        images: [
+          new NetworkImage(
+              'https://pic4.zhimg.com/v2-9d6561747e5f80e69ac1be7854d95f34_r.jpg'),
+          new NetworkImage(
+              'https://pic4.zhimg.com/v2-9134f0d73044b418613cad9e6f506923_r.jpg'),
+          new NetworkImage(
+              "https://pic1.zhimg.com/v2-0592b61978e2636f38fd0f6ca5457484_r.jpg")
+        ],
+      ));
 
   Widget createLiveView(BuildContext context, ZhuanLiveEntity data) {
     var tags = data.tags;
@@ -65,21 +77,10 @@ class ZhihuliveState extends State<ZhihulivePage> {
                         mainAxisAlignment: MainAxisAlignment.start,
                         crossAxisAlignment: CrossAxisAlignment.center,
                         children: <Widget>[
-                          new Icon(Icons.star,
-                              color: score > 1 ? Colors.yellow : Colors.black12,
-                              size: 16.0),
-                          new Icon(Icons.star,
-                              color: score > 2 ? Colors.yellow : Colors.black12,
-                              size: 16.0),
-                          new Icon(Icons.star,
-                              color: score > 3 ? Colors.yellow : Colors.black12,
-                              size: 16.0),
-                          new Icon(Icons.star,
-                              color: score > 4 ? Colors.yellow : Colors.black12,
-                              size: 16.0),
-                          new Icon(Icons.star,
-                              color: score > 5 ? Colors.yellow : Colors.black12,
-                              size: 16.0),
+                          new StaticRatingBar(
+                            size: 12.0,
+                            rate: score,
+                          )
                         ],
                       ),
                     ],
@@ -122,7 +123,7 @@ class ZhihuliveState extends State<ZhihulivePage> {
           },
         )),
         new Padding(
-          padding: new EdgeInsets.only(left: 0.0, right: 16.0, bottom: 0.0),
+          padding: new EdgeInsets.only(left: 0.0, right: 14.0, bottom: 0.0),
           child: new Material(
               borderRadius: new BorderRadius.circular(10.0),
               child: new Image.network(
@@ -137,6 +138,11 @@ class ZhihuliveState extends State<ZhihulivePage> {
   }
 
   @override
+  void dispose() {
+    super.dispose();
+  }
+
+  @override
   Widget build(BuildContext context) {
     return new Scaffold(
       body: new ListView(
@@ -144,7 +150,7 @@ class ZhihuliveState extends State<ZhihulivePage> {
         // padding: new EdgeInsets.symmetric(horizontal: 16.0),
         children: <Widget>[
           new Padding(
-              padding: new EdgeInsets.only(bottom: 20.0), child: imageBox),
+              padding: new EdgeInsets.only(bottom: 15.0), child: imageBox),
           new Center(
               child: new FutureBuilder<List<ZhuanLiveEntity>>(
                   future: loadZhihuLive(),
