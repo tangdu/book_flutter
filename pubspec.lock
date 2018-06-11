@@ -110,7 +110,7 @@ packages:
       name: flutter_html_view
       url: "https://pub.flutter-io.cn"
     source: hosted
-    version: "0.5.1"
+    version: "0.5.2"
   flutter_test:
     dependency: "direct dev"
     description: flutter
@@ -137,13 +137,6 @@ packages:
       url: "https://pub.flutter-io.cn"
     source: hosted
     version: "1.1.5"
-  google_maps_webservice:
-    dependency: "direct main"
-    description:
-      name: google_maps_webservice
-      url: "https://pub.flutter-io.cn"
-    source: hosted
-    version: "0.0.4"
   html:
     dependency: transitive
     description:
@@ -200,13 +193,6 @@ packages:
       url: "https://pub.flutter-io.cn"
     source: hosted
     version: "0.11.3+1"
-  map_view:
-    dependency: "direct main"
-    description:
-      name: map_view
-      url: "https://pub.flutter-io.cn"
-    source: hosted
-    version: "0.0.12"
   matcher:
     dependency: transitive
     description:
@@ -415,13 +401,6 @@ packages:
       url: "https://pub.flutter-io.cn"
     source: hosted
     version: "1.1.5"
-  uri:
-    dependency: transitive
-    description:
-      name: uri
-      url: "https://pub.flutter-io.cn"
-    source: hosted
-    version: "0.11.2"
   url_launcher:
     dependency: transitive
     description:
